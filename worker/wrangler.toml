@@ -1,0 +1,12 @@
+name = "campeones-liga-api"
+main = "src.js"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "campeones-liga-db"
+database_id = "380b6be3-253b-407d-87e0-ab5c8b88e57c"
+
+[[services]]
+binding = "NOTIFICACIONES"
+service = "campeones-notificaciones"

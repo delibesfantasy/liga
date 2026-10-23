@@ -1,0 +1,10 @@
+name = "campeones-notificaciones"
+main = "src.js"
+compatibility_date = "2026-10-22"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+
+[[d1_databases]]
+binding = "PUSH_DB"
+database_name = "campeones-notificaciones-db"
+database_id = "66977840-5a8f-49a0-b0b0-33bdaecf470d"
