@@ -1,0 +1,1352 @@
+[
+  {
+    "name": "Spider-Man",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Iron Man",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Thor",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Hulk",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Capitán América",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Viuda Negra",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Ojo de Halcón",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Capitana Marvel",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Black Panther",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Bruja Escarlata",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Doctor Strange",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Ant-Man",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Avispa",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Ms. Marvel",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Groot",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Rocket Raccoon",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Daredevil",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Tormenta",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Lobezno",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Jean Grey",
+    "universe": "Marvel",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Marvel. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Superman",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Batman",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Wonder Woman",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Flash",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Aquaman",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Green Lantern",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Cyborg",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Supergirl",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Batgirl",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Robin",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Nightwing",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Shazam",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Zatanna",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Raven",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Starfire",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Blue Beetle",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Green Arrow",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Black Canary",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Harley Quinn",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Catwoman",
+    "universe": "DC Comics",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de DC Comics. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Astérix",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Obélix",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Panorámix",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Ideafix",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Tintín",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Milú",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Capitán Haddock",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Profesor Tornasol",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Bianca Castafiore",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Lucky Luke",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Jolly Jumper",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Spirou",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Fantasio",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Marsupilami",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Pitufo Filósofo",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Pitufina",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Pitufo Fortachón",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Johan",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Pirluit",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Gargamel",
+    "universe": "Cómic europeo",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Mortadelo",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Filemón",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Ofelia",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Profesor Bacterio",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Superlópez",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Luisa Lanas",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Zipi",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Zape",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Carpanta",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Rompetechos",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Pepe Gotera",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Otilio",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Mafalda",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Felipe (Mafalda)",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Susanita",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Manolito",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Guille",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Libertad",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Doña Urraca",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "El Botones Sacarino",
+    "universe": "Cómic español y latinoamericano",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Goku",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Vegeta",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Bulma",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Piccolo",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Gohan",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Naruto",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Sakura Haruno",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Kakashi",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Hinata",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Luffy",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Nami",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Zoro",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Chopper",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Usopp",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Sailor Moon",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Sailor Mercury",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Deku",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Ochaco Uraraka",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 12,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Snoopy",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 19,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Garfield",
+    "universe": "Manga y otros",
+    "origin": "known",
+    "price": 5,
+    "description": "Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Astra Nova",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Capitán Orión",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Nébula",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Cometa Azul",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Nova Zero",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Estrella Prisma",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Eclipse",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Titán Solar",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Andrómeda",
+    "universe": "Guardianes del Cosmos",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Lyra del Bosque",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Sir Drako",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Elara",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Fénix Dorado",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Mago Brum",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Arwenia",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Rune",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Guardián del Roble",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Llama Violeta",
+    "universe": "Crónicas de Arcadia",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Doctor Pixel",
+    "universe": "Ciudad Neón",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Byte",
+    "universe": "Ciudad Neón",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Circuito",
+    "universe": "Ciudad Neón",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Tecna",
+    "universe": "Ciudad Neón",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Hacker Luz",
+    "universe": "Ciudad Neón",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Robotín",
+    "universe": "Ciudad Neón",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Prisma X",
+    "universe": "Ciudad Neón",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Inspector Neón",
+    "universe": "Ciudad Neón",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Don Bocadillo",
+    "universe": "Villa Carcajada",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Superdespiste",
+    "universe": "Villa Carcajada",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Doña Viñeta",
+    "universe": "Villa Carcajada",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Capitán Chiste",
+    "universe": "Villa Carcajada",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Profesor Garabato",
+    "universe": "Villa Carcajada",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Chispa Loca",
+    "universe": "Villa Carcajada",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Detective Bigote",
+    "universe": "Villa Carcajada",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "El Increíble Patoso",
+    "universe": "Villa Carcajada",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Cronos",
+    "universe": "Exploradores del Tiempo",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Valeria Viajera",
+    "universe": "Exploradores del Tiempo",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Capitán Brújula",
+    "universe": "Exploradores del Tiempo",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Arquea",
+    "universe": "Exploradores del Tiempo",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Leo Mapas",
+    "universe": "Exploradores del Tiempo",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Maya Horizonte",
+    "universe": "Exploradores del Tiempo",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Atlas",
+    "universe": "Exploradores del Tiempo",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Nilo",
+    "universe": "Exploradores del Tiempo",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Eco",
+    "universe": "Defensores de Gaia",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Flora",
+    "universe": "Defensores de Gaia",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Aqua",
+    "universe": "Defensores de Gaia",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Terra",
+    "universe": "Defensores de Gaia",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Viento",
+    "universe": "Defensores de Gaia",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Raíz",
+    "universe": "Defensores de Gaia",
+    "origin": "original",
+    "price": 5,
+    "description": "Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Coral",
+    "universe": "Defensores de Gaia",
+    "origin": "original",
+    "price": 12,
+    "description": "Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  },
+  {
+    "name": "Rayo Verde",
+    "universe": "Defensores de Gaia",
+    "origin": "original",
+    "price": 19,
+    "description": "Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.",
+    "image_url": "",
+    "status": "draft"
+  }
+]

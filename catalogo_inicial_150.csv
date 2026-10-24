@@ -1,0 +1,151 @@
+﻿name;universe;origin;price;description;image_url;status
+Spider-Man;Marvel;known;5;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Iron Man;Marvel;known;12;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Thor;Marvel;known;19;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Hulk;Marvel;known;5;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Capitán América;Marvel;known;12;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Viuda Negra;Marvel;known;19;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Ojo de Halcón;Marvel;known;5;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Capitana Marvel;Marvel;known;12;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Black Panther;Marvel;known;19;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Bruja Escarlata;Marvel;known;5;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Doctor Strange;Marvel;known;12;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Ant-Man;Marvel;known;19;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Avispa;Marvel;known;5;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Ms. Marvel;Marvel;known;12;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Groot;Marvel;known;19;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Rocket Raccoon;Marvel;known;5;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Daredevil;Marvel;known;12;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Tormenta;Marvel;known;19;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Lobezno;Marvel;known;5;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Jean Grey;Marvel;known;12;Personaje de Marvel. Ficha descriptiva pendiente de revisión.;;draft
+Superman;DC Comics;known;19;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Batman;DC Comics;known;5;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Wonder Woman;DC Comics;known;12;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Flash;DC Comics;known;19;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Aquaman;DC Comics;known;5;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Green Lantern;DC Comics;known;12;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Cyborg;DC Comics;known;19;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Supergirl;DC Comics;known;5;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Batgirl;DC Comics;known;12;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Robin;DC Comics;known;19;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Nightwing;DC Comics;known;5;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Shazam;DC Comics;known;12;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Zatanna;DC Comics;known;19;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Raven;DC Comics;known;5;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Starfire;DC Comics;known;12;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Blue Beetle;DC Comics;known;19;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Green Arrow;DC Comics;known;5;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Black Canary;DC Comics;known;12;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Harley Quinn;DC Comics;known;19;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Catwoman;DC Comics;known;5;Personaje de DC Comics. Ficha descriptiva pendiente de revisión.;;draft
+Astérix;Cómic europeo;known;12;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Obélix;Cómic europeo;known;19;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Panorámix;Cómic europeo;known;5;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Ideafix;Cómic europeo;known;12;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Tintín;Cómic europeo;known;19;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Milú;Cómic europeo;known;5;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Capitán Haddock;Cómic europeo;known;12;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Profesor Tornasol;Cómic europeo;known;19;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Bianca Castafiore;Cómic europeo;known;5;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Lucky Luke;Cómic europeo;known;12;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Jolly Jumper;Cómic europeo;known;19;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Spirou;Cómic europeo;known;5;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Fantasio;Cómic europeo;known;12;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Marsupilami;Cómic europeo;known;19;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Pitufo Filósofo;Cómic europeo;known;5;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Pitufina;Cómic europeo;known;12;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Pitufo Fortachón;Cómic europeo;known;19;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Johan;Cómic europeo;known;5;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Pirluit;Cómic europeo;known;12;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Gargamel;Cómic europeo;known;19;Personaje de Cómic europeo. Ficha descriptiva pendiente de revisión.;;draft
+Mortadelo;Cómic español y latinoamericano;known;5;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Filemón;Cómic español y latinoamericano;known;12;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Ofelia;Cómic español y latinoamericano;known;19;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Profesor Bacterio;Cómic español y latinoamericano;known;5;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Superlópez;Cómic español y latinoamericano;known;12;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Luisa Lanas;Cómic español y latinoamericano;known;19;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Zipi;Cómic español y latinoamericano;known;5;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Zape;Cómic español y latinoamericano;known;12;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Carpanta;Cómic español y latinoamericano;known;19;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Rompetechos;Cómic español y latinoamericano;known;5;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Pepe Gotera;Cómic español y latinoamericano;known;12;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Otilio;Cómic español y latinoamericano;known;19;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Mafalda;Cómic español y latinoamericano;known;5;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Felipe (Mafalda);Cómic español y latinoamericano;known;12;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Susanita;Cómic español y latinoamericano;known;19;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Manolito;Cómic español y latinoamericano;known;5;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Guille;Cómic español y latinoamericano;known;12;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Libertad;Cómic español y latinoamericano;known;19;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Doña Urraca;Cómic español y latinoamericano;known;5;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+El Botones Sacarino;Cómic español y latinoamericano;known;12;Personaje de Cómic español y latinoamericano. Ficha descriptiva pendiente de revisión.;;draft
+Goku;Manga y otros;known;19;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Vegeta;Manga y otros;known;5;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Bulma;Manga y otros;known;12;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Piccolo;Manga y otros;known;19;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Gohan;Manga y otros;known;5;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Naruto;Manga y otros;known;12;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Sakura Haruno;Manga y otros;known;19;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Kakashi;Manga y otros;known;5;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Hinata;Manga y otros;known;12;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Luffy;Manga y otros;known;19;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Nami;Manga y otros;known;5;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Zoro;Manga y otros;known;12;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Chopper;Manga y otros;known;19;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Usopp;Manga y otros;known;5;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Sailor Moon;Manga y otros;known;12;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Sailor Mercury;Manga y otros;known;19;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Deku;Manga y otros;known;5;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Ochaco Uraraka;Manga y otros;known;12;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Snoopy;Manga y otros;known;19;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Garfield;Manga y otros;known;5;Personaje de Manga y otros. Ficha descriptiva pendiente de revisión.;;draft
+Astra Nova;Guardianes del Cosmos;original;12;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Capitán Orión;Guardianes del Cosmos;original;19;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Nébula;Guardianes del Cosmos;original;5;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Cometa Azul;Guardianes del Cosmos;original;12;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Nova Zero;Guardianes del Cosmos;original;19;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Estrella Prisma;Guardianes del Cosmos;original;5;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Eclipse;Guardianes del Cosmos;original;12;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Titán Solar;Guardianes del Cosmos;original;19;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Andrómeda;Guardianes del Cosmos;original;5;Personaje original del universo Guardianes del Cosmos. Historia ampliable desde el gestor.;;draft
+Lyra del Bosque;Crónicas de Arcadia;original;12;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Sir Drako;Crónicas de Arcadia;original;19;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Elara;Crónicas de Arcadia;original;5;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Fénix Dorado;Crónicas de Arcadia;original;12;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Mago Brum;Crónicas de Arcadia;original;19;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Arwenia;Crónicas de Arcadia;original;5;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Rune;Crónicas de Arcadia;original;12;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Guardián del Roble;Crónicas de Arcadia;original;19;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Llama Violeta;Crónicas de Arcadia;original;5;Personaje original del universo Crónicas de Arcadia. Historia ampliable desde el gestor.;;draft
+Doctor Pixel;Ciudad Neón;original;12;Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.;;draft
+Byte;Ciudad Neón;original;19;Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.;;draft
+Circuito;Ciudad Neón;original;5;Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.;;draft
+Tecna;Ciudad Neón;original;12;Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.;;draft
+Hacker Luz;Ciudad Neón;original;19;Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.;;draft
+Robotín;Ciudad Neón;original;5;Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.;;draft
+Prisma X;Ciudad Neón;original;12;Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.;;draft
+Inspector Neón;Ciudad Neón;original;19;Personaje original del universo Ciudad Neón. Historia ampliable desde el gestor.;;draft
+Don Bocadillo;Villa Carcajada;original;5;Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.;;draft
+Superdespiste;Villa Carcajada;original;12;Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.;;draft
+Doña Viñeta;Villa Carcajada;original;19;Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.;;draft
+Capitán Chiste;Villa Carcajada;original;5;Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.;;draft
+Profesor Garabato;Villa Carcajada;original;12;Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.;;draft
+Chispa Loca;Villa Carcajada;original;19;Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.;;draft
+Detective Bigote;Villa Carcajada;original;5;Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.;;draft
+El Increíble Patoso;Villa Carcajada;original;12;Personaje original del universo Villa Carcajada. Historia ampliable desde el gestor.;;draft
+Cronos;Exploradores del Tiempo;original;19;Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.;;draft
+Valeria Viajera;Exploradores del Tiempo;original;5;Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.;;draft
+Capitán Brújula;Exploradores del Tiempo;original;12;Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.;;draft
+Arquea;Exploradores del Tiempo;original;19;Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.;;draft
+Leo Mapas;Exploradores del Tiempo;original;5;Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.;;draft
+Maya Horizonte;Exploradores del Tiempo;original;12;Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.;;draft
+Atlas;Exploradores del Tiempo;original;19;Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.;;draft
+Nilo;Exploradores del Tiempo;original;5;Personaje original del universo Exploradores del Tiempo. Historia ampliable desde el gestor.;;draft
+Eco;Defensores de Gaia;original;12;Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.;;draft
+Flora;Defensores de Gaia;original;19;Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.;;draft
+Aqua;Defensores de Gaia;original;5;Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.;;draft
+Terra;Defensores de Gaia;original;12;Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.;;draft
+Viento;Defensores de Gaia;original;19;Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.;;draft
+Raíz;Defensores de Gaia;original;5;Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.;;draft
+Coral;Defensores de Gaia;original;12;Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.;;draft
+Rayo Verde;Defensores de Gaia;original;19;Personaje original del universo Defensores de Gaia. Historia ampliable desde el gestor.;;draft

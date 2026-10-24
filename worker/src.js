@@ -58,6 +58,76 @@ async function setup(db,names,env){const present=await db.prepare('SELECT COUNT(
  }
  await setting(db,'season',1);await setting(db,'week',1);await setting(db,'locked',false);return credentials;
 }
+
+// MULTIVERSO v1 · Catálogo administrativo separado del motor futbolístico legado.
+const mvClean=(v,max=140)=>String(v??'').trim().slice(0,max);
+function mvInt(v){const n=Number(v);return Number.isInteger(n)?n:NaN;}
+async function mvCatalog(req,env,path,u){
+ onlyAdmin(u);
+ const db=env.DB;
+ if(path==='/api/multiverse/universes'&&req.method==='GET'){
+  const rows=(await db.prepare('SELECT id,name FROM mv_universes ORDER BY name').all()).results;
+  return send({universes:rows},200,req,env);
+ }
+ if(path==='/api/multiverse/universe'&&req.method==='POST'){
+  const b=await req.json(),name=mvClean(b.name,70);
+  if(name.length<2)throw Error('El universo debe tener al menos dos caracteres');
+  await db.prepare('INSERT INTO mv_universes(name) VALUES(?) ON CONFLICT(name) DO NOTHING').bind(name).run();
+  const row=await db.prepare('SELECT id,name FROM mv_universes WHERE name=?').bind(name).first();
+  return send({universe:row},200,req,env);
+ }
+ if(path==='/api/multiverse/catalog'&&req.method==='GET'){
+  const url=new URL(req.url),q=mvClean(url.searchParams.get('q'),100),status=mvClean(url.searchParams.get('status'),15),universe=mvInt(url.searchParams.get('universe')||0);
+  const limit=Math.min(100,Math.max(1,mvInt(url.searchParams.get('limit')||50)||50)),offset=Math.max(0,mvInt(url.searchParams.get('offset')||0)||0);
+  const where=['(? = \'\' OR c.name LIKE ? OR c.code LIKE ?)','(? = \'\' OR c.status = ?)','(? = 0 OR c.universe_id = ?)'].join(' AND ');
+  const args=[q,'%'+q+'%','%'+q+'%',status,status,universe,universe];
+  const base=`FROM mv_characters c JOIN mv_universes u ON u.id=c.universe_id WHERE ${where}`;
+  const rows=(await db.prepare(`SELECT c.id,c.code,c.name,c.description,c.origin,c.price,c.status,c.image_url,c.universe_id,u.name universe ${base} ORDER BY c.id LIMIT ? OFFSET ?`).bind(...args,limit,offset).all()).results;
+  const total=(await db.prepare('SELECT COUNT(*) n '+base).bind(...args).first()).n;
+  const totals=(await db.prepare("SELECT COUNT(*) total, SUM(CASE WHEN origin='known' THEN 1 ELSE 0 END) known, SUM(CASE WHEN origin='original' THEN 1 ELSE 0 END) original, SUM(CASE WHEN status='active' THEN 1 ELSE 0 END) active FROM mv_characters").first());
+  return send({characters:rows,total,totals,limit,offset},200,req,env);
+ }
+ if(path==='/api/multiverse/save'&&req.method==='POST'){
+  const b=await req.json(),id=mvInt(b.id||0),name=mvClean(b.name,90),description=mvClean(b.description,500),universeId=mvInt(b.universe_id),price=mvInt(b.price),origin=mvClean(b.origin,12),imageUrl=mvClean(b.image_url,350);
+  if(name.length<2||!Number.isInteger(universeId)||universeId<1||price<5||price>25||!['known','original'].includes(origin))throw Error('Revisa nombre, universo, origen y precio (5 a 25 M)');
+  if(imageUrl&&!(/^https:\/\/[a-z0-9._~!$&'()*+,;=:@%/?#-]+$/i.test(imageUrl)||/^\.\/assets\/[\w.-]+$/.test(imageUrl)))throw Error('Imagen: utiliza URL HTTPS o ./assets/archivo');
+  const universe=await db.prepare('SELECT id FROM mv_universes WHERE id=?').bind(universeId).first();if(!universe)throw Error('El universo no existe');
+  if(id>0){
+   const old=await db.prepare('SELECT id FROM mv_characters WHERE id=?').bind(id).first();if(!old)throw Error('Personaje no encontrado');
+   await db.prepare("UPDATE mv_characters SET name=?,description=?,universe_id=?,origin=?,price=?,image_url=?,updated_at=datetime('now') WHERE id=?").bind(name,description,universeId,origin,price,imageUrl,id).run();
+   return send({ok:true,id},200,req,env);
+  }
+  const res=await db.prepare("INSERT INTO mv_characters(name,description,universe_id,origin,price,image_url,status) VALUES(?,?,?,?,?,?,'draft')").bind(name,description,universeId,origin,price,imageUrl).run();
+  await db.prepare("UPDATE mv_characters SET code=printf('MV-%04d',id) WHERE id=?").bind(res.meta.last_row_id).run();
+  return send({ok:true,id:res.meta.last_row_id},201,req,env);
+ }
+ if(path==='/api/multiverse/status'&&req.method==='POST'){
+  const b=await req.json(),id=mvInt(b.id),status=mvClean(b.status,15);
+  if(!Number.isInteger(id)||id<1||!['draft','active','archived'].includes(status))throw Error('Estado no válido');
+  const found=await db.prepare('SELECT id FROM mv_characters WHERE id=?').bind(id).first();if(!found)throw Error('Personaje no encontrado');
+  await db.prepare("UPDATE mv_characters SET status=?,updated_at=datetime('now') WHERE id=?").bind(status,id).run();
+  return send({ok:true},200,req,env);
+ }
+ if(path==='/api/multiverse/import'&&req.method==='POST'){
+  const b=await req.json(),records=b.characters;
+  if(!Array.isArray(records)||records.length===0||records.length>200)throw Error('Importa entre 1 y 200 personajes por operación');
+  const universes=(await db.prepare('SELECT id,name FROM mv_universes').all()).results;
+  const map=new Map(universes.map(x=>[x.name.toLocaleLowerCase('es'),x.id]));
+  const statements=[];
+  for(const r of records){
+   const name=mvClean(r.name,90),origin=mvClean(r.origin,12),universe=mvClean(r.universe,70),description=mvClean(r.description,500),price=mvInt(r.price),image=mvClean(r.image_url,350),status=mvClean(r.status||'draft',15);
+   const uid=map.get(universe.toLocaleLowerCase('es'));
+   if(name.length<2||!uid||!['known','original'].includes(origin)||price<5||price>25||!['draft','active'].includes(status))throw Error('Registro inválido: '+name+'. Revisa universo, origen, precio y estado.');
+   if(image&&!(/^https:\/\/[a-z0-9._~!$&'()*+,;=:@%/?#-]+$/i.test(image)||/^\.\/assets\/[\w.-]+$/.test(image)))throw Error('URL de imagen inválida: '+name);
+   statements.push(db.prepare('INSERT INTO mv_characters(name,description,universe_id,origin,price,image_url,status) VALUES(?,?,?,?,?,?,?) ON CONFLICT(universe_id,name) DO NOTHING').bind(name,description,uid,origin,price,image,status));
+  }
+  for(let i=0;i<statements.length;i+=40)await db.batch(statements.slice(i,i+40));
+  await db.prepare("UPDATE mv_characters SET code=printf('MV-%04d',id) WHERE code IS NULL").run();
+  return send({ok:true,processed:records.length},200,req,env);
+ }
+ return send({error:'Ruta de catálogo desconocida'},404,req,env);
+}
+
 async function handler(request,env){if(!env.DB||!env.SESSION_SECRET||!env.ADMIN_PASSWORD)throw Error('Falta configuración del Worker');const url=new URL(request.url),path=url.pathname;
  if(request.method==='OPTIONS')return new Response(null,{status:204,headers:cors(request,env)});
  if(path==='/api/health')return send({ok:true,service:'CAMPEONES'},200,request,env);
@@ -67,6 +137,7 @@ async function handler(request,env){if(!env.DB||!env.SESSION_SECRET||!env.ADMIN_
   return send({token:await token({role:'student',id:student.id},env.SESSION_SECRET)},200,request,env);
  }
  const u=await auth(request,env),db=env.DB;
+ if(path.startsWith('/api/multiverse/'))return mvCatalog(request,env,path,u);
  if(path==='/api/push/public-key'&&request.method==='GET')return send({publicKey:env.VAPID_PUBLIC_KEY||null,enabled:!!(env.NOTIFICACIONES&&env.VAPID_PUBLIC_KEY)},200,request,env);
  if(path==='/api/push/subscribe'&&request.method==='POST'){
   if(!env.NOTIFICACIONES)throw Error('Notificaciones no configuradas');const b=await request.json();
