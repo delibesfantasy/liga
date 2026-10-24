@@ -1,0 +1,31 @@
+name: Preparar catalogo Multiverso
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  catalogo:
+    name: Crear tablas y cargar 150 personajes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar Wrangler
+        run: npm install --global wrangler@4
+      - name: Crear tablas separadas para el Multiverso
+        working-directory: worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler d1 execute campeones-liga-db --remote --file=./migrations/0001_multiverso_catalogo.sql
+      - name: Incorporar catalogo inicial de 150 personajes
+        working-directory: worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler d1 execute campeones-liga-db --remote --file=./migrations/0002_catalogo_inicial.sql
