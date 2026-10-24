@@ -1,0 +1,71 @@
+/* DCA · rediseño de la interfaz real, sin cambios de API ni D1 */
+:root{--lime:#baff36;--ink:#101b40;--paper:#f2f5ff}
+body{background:#060d25}
+.shell{max-width:none;width:100%;min-height:100vh;background:#f1f4fc!important}
+.header.visual-header,.header{min-height:unset!important;height:auto!important;min-height:unset!important;padding:20px clamp(18px,3vw,48px) 26px!important;background:linear-gradient(112deg,#081330 10%,#16245b 60%,#362170 100%)!important;border-bottom:0!important;isolation:isolate;overflow:hidden}
+.header.visual-header:before{opacity:.16!important}
+.header.visual-header:after{z-index:0!important;opacity:.3!important;mix-blend-mode:screen!important;inset:0!important;background:radial-gradient(circle at 85% 80%,#934dff80,transparent 50%),url('./assets/arena-cosmica.svg') center/cover!important;mask-image:none!important}
+.header .topbar,.header .hero{z-index:2!important;position:relative}
+.header .topbar{align-items:center!important}
+.header .hero,.header.visual-home-head .hero{min-height:unset!important;align-items:center!important;margin:22px 0 0!important}
+.header .hero h1,.header .hero-copy h1{font-size:clamp(34px,4.3vw,55px)!important;line-height:.94!important;max-width:100%!important;letter-spacing:.1px!important;text-shadow:0 4px 0 #04092155!important}
+.header .hero-copy p{margin:8px 0 0!important;display:block!important;font-size:13px!important;opacity:.85}
+.header .brand .dca-mark{font-size:clamp(34px,4vw,48px)!important}
+.header .kicker{margin:6px 0 0 8px!important;font-size:10px;display:inline-block!important}
+.header.visual-home-head{background:linear-gradient(112deg,#071c44,#191c59 60%,#552882)!important}
+.header.visual-home-head .hero h1{max-width:100%!important}
+.content{max-width:1450px;margin:0 auto!important;padding:24px clamp(15px,3vw,45px) 115px!important}
+.content > .panel:first-child{margin-top:0}
+.panel{border:1px solid #e4e8f5!important;border-radius:18px!important;box-shadow:0 9px 30px #17214b0b!important}
+.nav{width:min(100%,1450px)!important;max-width:1450px!important;left:50%;background:#08142f!important;box-shadow:0 -8px 25px #101b4050!important;border:0!important;border-radius:22px 22px 0 0!important}
+.nav button{min-width:0;font-size:12px!important;padding:2px 4px!important}
+.nav button .ico{font-size:22px!important}
+.dca-admin-lead{min-height:230px;border-radius:24px;overflow:hidden;position:relative;padding:28px clamp(22px,4vw,56px);background:radial-gradient(ellipse at 80% 36%,#9551eea8,transparent 43%),linear-gradient(113deg,#071331 0%,#17267a 65%,#511b7a 100%);color:white;box-shadow:0 16px 35px #20225625}
+.dca-admin-lead:after{content:'';position:absolute;inset:0;background:url('./assets/arena-cosmica.svg') 100% 45%/cover no-repeat;mix-blend-mode:screen;opacity:.35;pointer-events:none}
+.dca-admin-lead>*{position:relative;z-index:1}
+.dca-admin-eyebrow{color:var(--lime);font-size:11px;letter-spacing:2px;font-weight:900}
+.dca-admin-lead h2{font:italic 900 clamp(34px,4.7vw,67px)/.9 'Barlow Condensed',sans-serif;letter-spacing:1px;margin:12px 0}
+.dca-admin-lead h2 em{color:var(--lime);font-style:inherit}
+.dca-admin-lead p{margin:7px 0 18px;max-width:540px;line-height:1.5;color:#e0eaff;font-size:14px}
+.dca-admin-actions{display:flex;flex-wrap:wrap;gap:10px}
+.dca-admin-actions .btn{font-size:13px}
+.dca-admin-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:20px 0 18px}
+.dca-admin-tiles button{min-width:0;text-align:left;border:1px solid #dce4f5;cursor:pointer;background:white;border-radius:17px;padding:19px 17px;box-shadow:0 5px 16px #1523510b;transition:transform .14s,box-shadow .14s}
+.dca-admin-tiles button:hover{transform:translateY(-3px);box-shadow:0 12px 25px #1322531e}
+.dca-admin-tiles button span{display:block;font-size:32px;margin-bottom:10px}
+.dca-admin-tiles button strong{display:block;font-size:15px;color:#0c1a42;font-weight:900}
+.dca-admin-tiles button small{display:block;color:#62718f;font-size:11px;margin-top:4px}
+.dca-admin-section-label{font-size:11px;font-weight:900;color:#647396;letter-spacing:2px;margin:21px 0 10px}
+.dca-field{min-height:unset!important;background:linear-gradient(140deg,#050a2d70,#20105355),url('./assets/arena-cosmica.svg') center/cover!important}
+.dca-card{box-shadow:0 6px 14px #0a12472a!important}
+.dca-card .dca-image{min-height:150px}
+@media(min-width:1150px){
+ .shell{padding-left:216px}
+ .nav{position:fixed!important;top:0!important;bottom:0!important;left:0!important;transform:none!important;width:216px!important;height:100vh!important;max-width:none!important;border-radius:0!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;padding:30px 12px!important;gap:6px;box-shadow:8px 0 25px #0b143122!important}
+ .nav:before{content:'DCA  ✦';color:white;font:italic 900 30px 'Barlow Condensed',sans-serif;letter-spacing:1px;padding:8px 12px 22px;border-bottom:1px solid #ffffff24;margin-bottom:16px}
+ .nav button{flex:0 0 auto!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;gap:14px!important;border-radius:12px!important;padding:13px 14px!important;text-align:left!important;font-size:13px!important;font-weight:800!important}
+ .nav button.active{background:#1955a6!important;color:#c5ff58!important}
+ .nav button .ico{width:29px;text-align:center}
+ .content{padding-bottom:50px!important}
+ .header.visual-header{padding-left:45px!important}
+}
+@media(max-width:780px){
+ .header.visual-header,.header{padding:18px 18px 22px!important}
+ .header .hero{margin:18px 0 0!important}
+ .dca-admin-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .dca-admin-lead{padding:25px 20px;min-height:210px}
+ .content{padding-top:16px!important}
+ .nav button{font-size:10px!important}
+ .nav button .ico{font-size:20px!important}
+}
+@media(max-width:430px){
+ .header .kicker{font-size:8px!important;margin-left:0!important}
+ .header .user-chip{font-size:11px!important;padding:8px!important}
+ .dca-admin-lead h2{font-size:42px}
+ .dca-admin-tiles button{padding:13px 11px}
+ .dca-admin-tiles button span{font-size:25px}
+ .dca-admin-tiles button strong{font-size:13px}
+ .nav{gap:0!important;padding-left:0!important;padding-right:0!important}
+ .nav button{font-size:9px!important;padding:2px 0!important}
+ .nav button .ico{font-size:19px!important}
+}
