@@ -80,3 +80,22 @@ body{background:#050b1c!important}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 
 .d13-searchbox{display:flex;align-items:center;gap:9px;background:#0b1834;border:1px solid #34537d;border-radius:12px;padding:0 12px;margin:8px 0 13px;color:#54d9ff}.d13-searchbox input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;padding:12px 0;font:inherit}.d13-searchbox input::placeholder{color:#a8bad8}.d13-ranking-actions{display:flex;gap:7px;overflow:auto;margin-bottom:12px}.d13-ranking-actions button{background:#14274f;border:1px solid #406093;border-radius:9px;color:#e0edff;padding:8px 10px;font:inherit;white-space:nowrap;cursor:pointer}.d13-ranking-actions button.active,.d13-ranking-actions button:focus-visible{background:#bbff48;color:#081530}.d12-mission[hidden],.d12-rank-row[hidden]{display:none!important}
+
+
+/* v13.2 hero art replacement: remove any football feel and use comic squad art */
+.d12-header{position:relative;overflow:hidden;isolation:isolate!important}
+.d12-header::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 82% 32%,rgba(123,88,255,.16),transparent 28%),radial-gradient(circle at 16% 78%,rgba(45,212,255,.08),transparent 22%);pointer-events:none;z-index:0}
+.d12-header::after{content:'';position:absolute;right:-6px;bottom:0;width:min(40vw,320px);height:100%;background:url('./assets/hero-comic-squad.png') right bottom/contain no-repeat;opacity:.62;pointer-events:none;z-index:0;filter:drop-shadow(0 12px 30px rgba(0,0,0,.28))}
+.d12-top,.d12-page-head{position:relative;z-index:1}
+@media(max-width:650px){
+  .d12-header::after{width:min(48vw,220px);opacity:.42;right:-10px;background-position:right 12px bottom}
+  .d12-page-head{max-width:70%}
+}
+
+/* DCA V13.2 final: full-width comic squad header; overrides inherited football graphics */
+.header.d12-header, .d12-header {
+ background:linear-gradient(90deg, rgba(3,10,30,.92) 0%,rgba(5,12,38,.72) 46%,rgba(5,12,38,.18) 100%),url('./assets/hero-comic-squad.webp') center 54%/cover no-repeat!important;
+}
+.header.d12-header::before,.header.d12-header::after,.d12-header::before,.d12-header::after{content:none!important;display:none!important}
+.d12-header .d12-page-head{max-width:75%;text-shadow:0 2px 13px #020817}
+@media(max-width:650px){.d12-header .d12-page-head{max-width:72%}}
