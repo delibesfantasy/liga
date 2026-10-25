@@ -128,6 +128,93 @@ async function mvCatalog(req,env,path,u){
  return send({error:'Ruta de catálogo desconocida'},404,req,env);
 }
 
+
+// DCA V14: independent jornadas, immutable snapshots, no educational grade exposure.
+async function dcaJornada(db,season,week){return db.prepare('SELECT * FROM dca_jornadas WHERE season=? AND week=?').bind(season,week).first();}
+function dcaNumber(x,min,max,label){const n=Number(x);if(!Number.isInteger(n)||n<min||n>max)throw Error(label+' fuera de rango');return n;}
+async function dcaRanking(db,season,week=null){
+ const clause=week===null?'':' AND s.week=?'; const bind=week===null?[season]:[season,week];
+ return (await db.prepare(`SELECT t.student_id id,t.club_name name,COALESCE(SUM(s.points),0) points,COALESCE(SUM(s.bonus),0) bonus,COUNT(s.week) jornadas FROM dca_teams t LEFT JOIN dca_team_scores s ON s.student_id=t.student_id AND s.season=?${clause} GROUP BY t.student_id ORDER BY points DESC,t.club_name ASC,t.student_id ASC`).bind(...bind).all()).results;
+}
+async function dcaEnsureOpen(db,season,week){let j=await dcaJornada(db,season,week);if(!j){await db.prepare("INSERT OR IGNORE INTO dca_jornadas(season,week,status) VALUES(?,?,'open')").bind(season,week).run();j=await dcaJornada(db,season,week);}return j;}
+function dcaFantasyScore(characterId,season,week){let v=(characterId*2654435761+season*2246822519+week*3266489917)>>>0;v^=v>>>16;v=Math.imul(v,2246822507)>>>0;v^=v>>>13;return 6+(v%25);}// Game-only seeded score, unrelated to assessments.
+async function dcaRoundAPI(req,env,path,u){const db=env.DB,season=await dcaMeta(db,'season')||1,week=await dcaMeta(db,'week')||1;
+ if(path==='/api/dca/ranking'&&req.method==='GET'){
+   const q=new URL(req.url).searchParams,scope=['week','group'].includes(q.get('scope'))?q.get('scope'):'general';const target=q.has('week')?dcaNumber(q.get('week'),1,10000,'Jornada'):week;
+   const round=scope==='week'?await dcaJornada(db,season,target):null;
+   const publishedWeeks=(await db.prepare("SELECT week FROM dca_jornadas WHERE season=? AND status='published' ORDER BY week DESC").bind(season).all()).results.map(x=>x.week);
+   let rows=await dcaRanking(db,season,scope==='week'?target:null),group='';
+   if(scope==='group'){
+     if(u.role==='student'){const g=await db.prepare('SELECT group_name FROM dca_participant_groups WHERE student_id=?').bind(u.id).first();group=g?.group_name||'';}
+     else group=String(q.get('group')||'').slice(0,70);
+     if(group){const ids=(await db.prepare('SELECT student_id id FROM dca_participant_groups WHERE group_name=?').bind(group).all()).results;const members=new Set(ids.map(x=>x.id));rows=rows.filter(r=>members.has(r.id));}
+   }
+   return send({season,week:target,scope,group,publishedWeeks,roundStatus:round?.status||'open',rows,myStudentId:u.role==='student'?u.id:null},200,req,env);
+ }
+ if(path==='/api/dca/jornadas'&&req.method==='GET'){
+  onlyAdmin(u);
+  const current=await dcaEnsureOpen(db,season,week);
+  const rounds=(await db.prepare('SELECT season,week,status,created_at,locked_at,published_at FROM dca_jornadas WHERE season=? ORDER BY week DESC').bind(season).all()).results;
+  const chars=(await db.prepare('SELECT c.id,c.name,c.price,r.role,sc.points FROM mv_characters c JOIN dca_character_roles r ON r.character_id=c.id LEFT JOIN dca_character_scores sc ON sc.character_id=c.id AND sc.season=? AND sc.week=? WHERE c.status=\'active\' ORDER BY c.name').bind(season,week).all()).results;
+  const bonuses=(await db.prepare('SELECT student_id,bonus FROM dca_team_bonuses WHERE season=? AND week=?').bind(season,week).all()).results;
+  return send({season,week,locked:current.status!=='open',rounds,teams:(await db.prepare('SELECT student_id id,club_name name FROM dca_teams ORDER BY club_name').all()).results,characters:chars,bonuses,ranking:await dcaRanking(db,season),snapshots:(await db.prepare('SELECT COUNT(*) n FROM dca_snapshots WHERE season=? AND week=?').bind(season,week).first()).n},200,req,env);
+ }
+ if(!path.startsWith('/api/dca/jornadas/')||req.method!=='POST')return send({error:'Ruta no encontrada'},404,req,env);
+ onlyAdmin(u);
+ const action=path.split('/').pop();const round=await dcaEnsureOpen(db,season,week);
+ if(action==='lock'){
+  if(round.status!=='open')throw Error('La jornada ya está cerrada o publicada');
+  const teams=(await db.prepare('SELECT student_id,formation FROM dca_teams').all()).results;if(!teams.length)throw Error('No hay equipos DCA');
+  const batch=[];for(const t of teams){const roster=(await db.prepare('SELECT r.character_id,c.role FROM dca_roster r JOIN dca_character_roles c ON c.character_id=r.character_id WHERE r.student_id=?').bind(t.student_id).all()).results;
+   if(roster.length!==6||!dcaEq(dcaCount(roster),DCA_FORMATIONS[t.formation]||[]))throw Error('Equipo incompleto o formación incorrecta: '+t.student_id);
+   for(const c of roster)batch.push(db.prepare('INSERT INTO dca_snapshots(season,week,student_id,character_id,role) VALUES(?,?,?,?,?)').bind(season,week,t.student_id,c.character_id,c.role));
+  }
+  batch.push(db.prepare("UPDATE dca_jornadas SET status='locked',locked_at=datetime('now') WHERE season=? AND week=? AND status='open'").bind(season,week));
+  batch.push(db.prepare("UPDATE dca_meta SET value='1' WHERE key='locked'"));await db.batch(batch);
+  return send({ok:true,teams:teams.length},200,req,env);
+ }
+ if(action==='reopen'){
+  if(round.status!=='locked')throw Error('Solo se puede reabrir una jornada cerrada sin publicar');
+  const scored=(await db.prepare('SELECT COUNT(*) n FROM dca_team_scores WHERE season=? AND week=?').bind(season,week).first()).n;if(scored)throw Error('Ya existen resultados');
+  await db.batch([db.prepare('DELETE FROM dca_snapshots WHERE season=? AND week=?').bind(season,week),db.prepare("UPDATE dca_jornadas SET status='open',locked_at=NULL WHERE season=? AND week=? AND status='locked'").bind(season,week),db.prepare("UPDATE dca_meta SET value='0' WHERE key='locked'")]);return send({ok:true},200,req,env);
+ }
+ if(action==='seed'){
+  if(round.status!=='locked')throw Error('Cierra la jornada antes de generar puntuaciones');
+  const rows=(await db.prepare("SELECT DISTINCT character_id id FROM dca_snapshots WHERE season=? AND week=?").bind(season,week).all()).results;
+  await db.batch(rows.map(c=>db.prepare('INSERT OR IGNORE INTO dca_character_scores(season,week,character_id,points) VALUES(?,?,?,?)').bind(season,week,c.id,dcaFantasyScore(c.id,season,week))));
+  return send({ok:true,assigned:rows.length},200,req,env);
+ }
+ if(action==='score'){
+  if(round.status!=='locked')throw Error('Solo se pueden editar puntuaciones de la jornada cerrada');const b=await req.json(),id=dcaNumber(b.character_id,1,1000000,'Personaje'),points=dcaNumber(b.points,0,30,'Puntos');
+  const active=await db.prepare('SELECT 1 FROM dca_snapshots WHERE season=? AND week=? AND character_id=? LIMIT 1').bind(season,week,id).first();if(!active)throw Error('El personaje no figura en ninguna plantilla cerrada');
+  await db.prepare('INSERT INTO dca_character_scores(season,week,character_id,points) VALUES(?,?,?,?) ON CONFLICT(season,week,character_id) DO UPDATE SET points=excluded.points').bind(season,week,id,points).run();return send({ok:true},200,req,env);
+ }
+ if(action==='bonus'){
+  if(round.status!=='locked')throw Error('Solo se pueden editar bonificaciones antes de publicar');const b=await req.json(),id=dcaNumber(b.student_id,1,1000000,'Equipo'),bonus=dcaNumber(b.bonus,0,5,'Bonificación');
+  const team=await db.prepare('SELECT 1 FROM dca_teams WHERE student_id=?').bind(id).first();if(!team)throw Error('Equipo desconocido');
+  await db.prepare('INSERT INTO dca_team_bonuses(season,week,student_id,bonus) VALUES(?,?,?,?) ON CONFLICT(season,week,student_id) DO UPDATE SET bonus=excluded.bonus').bind(season,week,id,bonus).run();return send({ok:true},200,req,env);
+ }
+ if(action==='publish'){
+  if(round.status!=='locked')throw Error('Cierra la jornada antes de publicar');
+  const missing=(await db.prepare('SELECT COUNT(DISTINCT s.character_id) n FROM dca_snapshots s LEFT JOIN dca_character_scores c ON c.season=s.season AND c.week=s.week AND c.character_id=s.character_id WHERE s.season=? AND s.week=? AND c.character_id IS NULL').bind(season,week).first()).n;
+  if(missing)throw Error('Faltan puntuaciones en '+missing+' personajes. Utiliza generar puntuaciones o edítalas manualmente.');
+  const teams=(await db.prepare('SELECT student_id FROM dca_teams').all()).results;const q=[];
+  for(const team of teams){const sum=await db.prepare('SELECT COUNT(*) n,COALESCE(SUM(c.points),0) base FROM dca_snapshots s JOIN dca_character_scores c ON c.season=s.season AND c.week=s.week AND c.character_id=s.character_id WHERE s.season=? AND s.week=? AND s.student_id=?').bind(season,week,team.student_id).first();if(sum.n!==6)throw Error('Faltan personajes en un equipo cerrado');
+   const b=await db.prepare('SELECT bonus FROM dca_team_bonuses WHERE season=? AND week=? AND student_id=?').bind(season,week,team.student_id).first();const bonus=b?.bonus||0;
+   q.push(db.prepare('INSERT INTO dca_team_scores(season,week,student_id,points,bonus) VALUES(?,?,?,?,?)').bind(season,week,team.student_id,sum.base+bonus,bonus));
+  }
+  q.push(db.prepare("UPDATE dca_jornadas SET status='published',published_at=datetime('now') WHERE season=? AND week=? AND status='locked'").bind(season,week));
+  // No automatic next-week creation here: preserve a review window for results.
+  await db.batch(q);return send({ok:true,teams:teams.length},200,req,env);
+ }
+ if(action==='next'){
+  if(round.status!=='published')throw Error('Publica la jornada antes de abrir la siguiente');
+  await db.batch([db.prepare("UPDATE dca_meta SET value=? WHERE key='week'").bind(String(week+1)),db.prepare("UPDATE dca_meta SET value='0' WHERE key='locked'"),db.prepare("INSERT OR IGNORE INTO dca_jornadas(season,week,status) VALUES(?,?,'open')").bind(season,week+1)]);
+  return send({ok:true,week:week+1},200,req,env);
+ }
+ return send({error:'Acción de jornada desconocida'},404,req,env);
+}
+
 // DCA: independent game module. Requires existing helper functions in worker/src.js.
 const DCA_FORMATIONS={'2-2-2':[2,2,2],'3-2-1':[3,2,1],'3-1-2':[3,1,2],'2-3-1':[2,3,1],'2-1-3':[2,1,3],'1-3-2':[1,3,2],'1-2-3':[1,2,3]};
 const DCA_ROLES=['DEF','CRE','ATA'];
@@ -155,6 +242,7 @@ async function dcaState(db,u){const season=await dcaMeta(db,'season'),week=await
  return {...base,role:'student',ready:true,team,roster,identity,transfers:used,validFormation:dcaEq(dcaCount(roster),DCA_FORMATIONS[team.formation])};
 }
 async function dcaHandler(req,env,path,u){const db=env.DB;
+ if(path==='/api/dca/ranking'||path==='/api/dca/jornadas'||path.startsWith('/api/dca/jornadas/'))return dcaRoundAPI(req,env,path,u);
 
  if(path==='/api/dca/participants'&&req.method==='GET'){
   onlyAdmin(u);
@@ -195,6 +283,7 @@ async function dcaHandler(req,env,path,u){const db=env.DB;
   const initial=await db.prepare('SELECT COUNT(*) n FROM dca_teams').first();
   const join=[];
   if(initial.n){
+   if(await dcaMeta(db,'locked'))throw Error('La jornada está cerrada. Incorpora participantes cuando se abra la siguiente jornada.');
    const all=await dcaCatalog(db,true),season=await dcaMeta(db,'season')||1;
    const used=(await db.prepare('SELECT character_id id FROM dca_identities WHERE season=?').bind(season).all()).results;
    const occupied=new Set(used.map(x=>Number(x.id)));

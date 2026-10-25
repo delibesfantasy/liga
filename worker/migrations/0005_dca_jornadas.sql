@@ -1,0 +1,11 @@
+-- DCA V14 · jornadas Fantasy aisladas del sistema anterior.
+CREATE TABLE IF NOT EXISTS dca_jornadas(season INTEGER NOT NULL,week INTEGER NOT NULL,status TEXT NOT NULL DEFAULT 'open' CHECK(status IN('open','locked','published')),created_at TEXT NOT NULL DEFAULT (datetime('now')),locked_at TEXT,published_at TEXT,PRIMARY KEY(season,week));
+CREATE TABLE IF NOT EXISTS dca_snapshots(season INTEGER NOT NULL,week INTEGER NOT NULL,student_id INTEGER NOT NULL REFERENCES dca_teams(student_id),character_id INTEGER NOT NULL REFERENCES mv_characters(id),role TEXT NOT NULL CHECK(role IN('DEF','CRE','ATA')),PRIMARY KEY(season,week,student_id,character_id));
+CREATE INDEX IF NOT EXISTS dca_snapshot_student ON dca_snapshots(season,week,student_id);
+CREATE TABLE IF NOT EXISTS dca_character_scores(season INTEGER NOT NULL,week INTEGER NOT NULL,character_id INTEGER NOT NULL REFERENCES mv_characters(id),points INTEGER NOT NULL CHECK(points BETWEEN 0 AND 30),PRIMARY KEY(season,week,character_id));
+CREATE TABLE IF NOT EXISTS dca_team_bonuses(season INTEGER NOT NULL,week INTEGER NOT NULL,student_id INTEGER NOT NULL REFERENCES dca_teams(student_id),bonus INTEGER NOT NULL DEFAULT 0 CHECK(bonus BETWEEN 0 AND 5),PRIMARY KEY(season,week,student_id));
+CREATE TABLE IF NOT EXISTS dca_team_scores(season INTEGER NOT NULL,week INTEGER NOT NULL,student_id INTEGER NOT NULL REFERENCES dca_teams(student_id),points INTEGER NOT NULL CHECK(points BETWEEN 0 AND 185),bonus INTEGER NOT NULL CHECK(bonus BETWEEN 0 AND 5),PRIMARY KEY(season,week,student_id));
+-- Results immutable after publication, including during accidental administrative edits.
+CREATE TRIGGER IF NOT EXISTS dca_scores_locked_update BEFORE UPDATE ON dca_team_scores BEGIN SELECT RAISE(ABORT,'Los resultados publicados no se pueden alterar'); END;
+CREATE TRIGGER IF NOT EXISTS dca_scores_locked_delete BEFORE DELETE ON dca_team_scores BEGIN SELECT RAISE(ABORT,'Los resultados publicados no se pueden borrar'); END;
+INSERT OR IGNORE INTO dca_jornadas(season,week,status) SELECT CAST(s.value AS INTEGER),CAST(w.value AS INTEGER),CASE WHEN l.value='1' THEN 'locked' ELSE 'open' END FROM dca_meta s,dca_meta w,dca_meta l WHERE s.key='season' AND w.key='week' AND l.key='locked';
