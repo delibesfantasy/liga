@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS dca_participant_groups (student_id INTEGER PRIMARY KEY REFERENCES students(id) ON DELETE CASCADE, group_name TEXT NOT NULL DEFAULT '');

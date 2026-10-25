@@ -155,6 +155,68 @@ async function dcaState(db,u){const season=await dcaMeta(db,'season'),week=await
  return {...base,role:'student',ready:true,team,roster,identity,transfers:used,validFormation:dcaEq(dcaCount(roster),DCA_FORMATIONS[team.formation])};
 }
 async function dcaHandler(req,env,path,u){const db=env.DB;
+
+ if(path==='/api/dca/participants'&&req.method==='GET'){
+  onlyAdmin(u);
+  const rows=(await db.prepare(`SELECT s.id,s.name,s.login,COALESCE(g.group_name,'') group_name,
+   cl.name club_name,CASE WHEN t.student_id IS NULL THEN 0 ELSE 1 END has_dca_team
+   FROM students s LEFT JOIN dca_participant_groups g ON g.student_id=s.id
+   LEFT JOIN clubs cl ON cl.student_id=s.id LEFT JOIN dca_teams t ON t.student_id=s.id
+   ORDER BY s.id`).all()).results;
+  return send({participants:rows},200,req,env);
+ }
+ if(path==='/api/dca/participants/create'&&req.method==='POST'){
+  onlyAdmin(u);
+  const body=await req.json(),items=body.participants;
+  if(!Array.isArray(items)||!items.length||items.length>100)throw Error('Introduce entre 1 y 100 participantes por operación.');
+  const entries=items.map(x=>({name:String(x.name||'').trim(),group:String(x.group||'').trim(),club:String(x.club||'').trim()}));
+  if(entries.some(x=>!x.name||x.name.length>90||x.group.length>70||x.club.length>90))throw Error('Revisa nombres, grupos y clubes.');
+  const dbCount=(await db.prepare('SELECT COUNT(*) n FROM students').first()).n;
+  const legacy=(await db.prepare('SELECT id FROM characters ORDER BY id').all()).results;
+  if(!legacy.length)throw Error('La base aún no tiene personajes de compatibilidad para el acceso.');
+  const existing=(await db.prepare('SELECT login FROM students').all()).results;
+  const reserved=new Set(existing.map(x=>x.login));
+  const clubsExisting=(await db.prepare('SELECT name FROM clubs').all()).results;
+  const namesUsed=new Set(clubsExisting.map(x=>x.name.toLowerCase()));
+  const codes=[];let counter=1;
+  for(const x of entries){
+   let login;
+   do{login='A'+String(counter++).padStart(3,'0')}while(reserved.has(login));
+   reserved.add(login);
+   const code=pin(); const hash=await digest(code+env.SESSION_SECRET);
+   let club=x.club||('Club de '+x.name);const original=club;let n=2;
+   while(namesUsed.has(club.toLowerCase()))club=original+' '+n++;
+   namesUsed.add(club.toLowerCase());
+   codes.push({...x,club,login,code,hash});
+  }
+  // D1 batch for each registration: single-statement foreign keys without relying on last_insert_rowid across connections.
+  const existingIDs=(await db.prepare('SELECT id FROM students').all()).results;
+  const last=Math.max(0,...existingIDs.map(x=>Number(x.id)));
+  const initial=await db.prepare('SELECT COUNT(*) n FROM dca_teams').first();
+  const join=[];
+  if(initial.n){
+   const all=await dcaCatalog(db,true),season=await dcaMeta(db,'season')||1;
+   const used=(await db.prepare('SELECT character_id id FROM dca_identities WHERE season=?').bind(season).all()).results;
+   const occupied=new Set(used.map(x=>Number(x.id)));
+   const free=shuffle(all.filter(x=>!occupied.has(Number(x.id))));
+   if(free.length<codes.length)throw Error('No quedan suficientes identidades únicas; publica más personajes antes de añadir participantes.');
+   for(let i=0;i<codes.length;i++){
+    const id=last+i+1,pick=dcaPick(all);
+    join.push(db.prepare('INSERT INTO dca_teams(student_id,club_name,balance,formation) VALUES(?,?,?,?)').bind(id,codes[i].club,pick.balance,'2-2-2'));
+    join.push(db.prepare('INSERT INTO dca_identities(season,student_id,character_id) VALUES(?,?,?)').bind(season,id,free[i].id));
+    for(const ch of pick.selection)join.push(db.prepare('INSERT INTO dca_roster(student_id,character_id) VALUES(?,?)').bind(id,ch.id));
+   }
+  }
+  const stmts=[];
+  for(let i=0;i<codes.length;i++){
+   const c=codes[i],id=last+i+1;
+   stmts.push(db.prepare('INSERT INTO students(id,name,login,pin_hash,character_id) VALUES(?,?,?,?,?)').bind(id,c.name,c.login,c.hash,legacy[(dbCount+i)%legacy.length].id));
+   stmts.push(db.prepare('INSERT INTO clubs(student_id,name,balance,crest) VALUES(?,?,100,?)').bind(id,c.club,'★'));
+   stmts.push(db.prepare('INSERT INTO dca_participant_groups(student_id,group_name) VALUES(?,?)').bind(id,c.group));
+  }
+  await db.batch([...stmts,...join]);
+  return send({created:codes.length,credentials:codes.map(({name,group,club,login,code})=>({name,group,club,login,code}))},200,req,env);
+ }
  if(path==='/api/dca/state'&&req.method==='GET')return send(await dcaState(db,u),200,req,env);
  if(path==='/api/dca/catalog'&&req.method==='GET')return send({characters:await dcaCatalog(db,true)},200,req,env);
  if(path==='/api/dca/bootstrap'&&req.method==='POST'){
