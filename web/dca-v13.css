@@ -1,0 +1,82 @@
+/* DCA V13 — visual system and ergonomic refinements. Leave Worker contracts unchanged. */
+:root{--d13-ink:#050b1c;--d13-neon:#bbff48;--d13-cyan:#54d9ff;--d13-purple:#813dff}
+body{background:#050b1c!important}
+#app{min-height:100dvh}
+.d12-header{background:radial-gradient(ellipse at 100% 0%,rgba(80,38,169,.45),transparent 75%),linear-gradient(145deg,#060e29,#0d1a3e)!important}
+.d12-hero{min-height:240px!important;isolation:isolate}
+.d12-hero:before{background-position:center 44%!important}
+.d12-shortcut{min-height:148px!important;display:flex!important;flex-direction:column!important;justify-content:flex-end!important}
+.d12-shortcut:before{filter:saturate(1.2)!important}
+.d12-shortcut strong{font-size:clamp(20px,4vw,29px)!important;letter-spacing:.02em!important}
+.d12-shortcut small{font-size:12px!important}
+.d12-mission{border:1px solid rgba(91,153,239,.45)!important;background:linear-gradient(125deg,#101a35 0%,#0b1229 100%)!important;color:#f5f8ff!important;box-shadow:0 10px 30px rgba(0,0,0,.18)!important;overflow:hidden!important}
+.d12-mission h2,.d12-mission p{color:#f5f8ff!important}
+.d12-mission p{color:#b8c9e7!important}
+.d12-mission-info{min-width:0!important}
+.d12-subject{background:#1e3a68!important;color:#b0e8ff!important}
+.d13-difficulty{display:inline-flex;margin-left:6px;border:1px solid #9a72f4;border-radius:6px;padding:3px 7px;font-size:11px;color:#efdcff;text-transform:uppercase}
+.d13-mission-summary{display:flex;align-items:center;gap:13px;border:1px solid rgba(111,143,226,.45);padding:12px 15px;border-radius:14px;background:linear-gradient(95deg,#161c50,#0b1731);color:#fff;margin-bottom:14px}
+.d13-mission-summary>strong{font-size:32px;color:#bbff48;font-family:'Barlow Condensed',sans-serif;white-space:nowrap}
+.d13-mission-summary>strong span{font-size:17px;color:#b1c2e7}.d13-mission-summary b{display:block;font-size:13px;letter-spacing:.1em}.d13-mission-summary small{display:block;color:#a8bad8;font-size:11px;margin-top:4px}
+.d13-reward{font-size:12px!important;font-weight:700!important;color:#d0fbff!important}
+.d12-mission-footer button:not([disabled]){background:linear-gradient(110deg,#c7ff5a,#a5f32d)!important;color:#09220e!important;border-radius:10px!important;font-weight:900!important;min-height:40px!important}
+.d12-mission-footer button[disabled]{opacity:.7!important;color:#b8cbdf!important}
+.d12-ranking-table{overflow:hidden;border-radius:13px;border:1px solid rgba(83,167,240,.3)}
+.d12-rank-row{min-height:52px!important;gap:9px!important;background:#0d1832!important;border-bottom:1px solid rgba(94,139,213,.17)!important;color:#edf5ff!important}
+.d12-rank-row.me{background:linear-gradient(90deg,#274531,#172e36)!important;box-shadow:inset 3px 0 #bbff48}
+.d12-rank-club{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.d12-ranking .d12-headrow h2,.d12-missions .d12-headrow h2{color:#f5f8ff}
+.v11-arena{background-image:linear-gradient(0deg,rgba(5,11,28,.3),rgba(5,11,28,.1)),url('./assets/world-arena.webp')!important;background-size:cover!important;background-position:center!important}
+.v11-team-tools{gap:6px!important}
+.v11-team-tools>div{min-width:0!important}
+.v11-arena .dca-card{background:linear-gradient(165deg,#101d41,#0b1024)!important;border:1px solid #2b83d8!important;box-shadow:0 0 0 1px rgba(15,115,220,.19),0 7px 16px #020816a8!important}
+.v11-arena .dca-image{background:#0a1230!important}
+.v11-arena .dca-image img{object-fit:cover!important;object-position:center 29%!important}
+.v11-arena .dca-detail{color:#f6f9ff!important;background:#0b1733!important}
+.v11-arena .dca-detail strong,.v11-arena .dca-price{color:#f5f8ff!important}
+.v11-arena .dca-tag{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#b3defe!important}
+.v11-arena .v11-role{color:#dbfaff!important;text-shadow:0 1px 5px #082860}
+.d12-identity{border:1px solid rgba(109,160,233,.35)!important;background:#0d1731!important;color:#fff!important;overflow:hidden!important}
+.d12-id-body h2{color:#f6f8ff!important}
+.d12-id-body p,.d12-id-body small{color:#c0cde8!important}
+.d12-id-art img{object-fit:cover!important}
+.d12-question{background:#08132d;color:#f5f8ff;border-radius:16px;overflow:hidden}
+.d12-quiz{background:#0d1935!important;color:#f5f8ff!important}
+.d12-quiz h3{color:#f5f8ff!important}
+.d12-choices label{background:#15234a!important;color:#f7faff!important;border:1px solid #40618f!important}
+.d12-choices input:checked+span{color:#bbff48!important}
+@media(max-width:600px){
+ .d12-header{padding-top:calc(12px + env(safe-area-inset-top,0px))!important;padding-bottom:12px!important;min-height:unset!important}
+ .d12-header h1{font-size:clamp(27px,8vw,40px)!important;line-height:.95!important}
+ .d12-hero{min-height:194px!important}
+ .d12-home .d12-quickstats{margin:7px 0!important}
+ .d12-shortcuts{gap:9px!important}
+ .d12-shortcut{min-height:121px!important}
+ .d12-mission{display:grid!important;grid-template-columns:102px minmax(0,1fr)!important;min-height:142px!important}
+ .d12-mission-image{width:102px!important;min-width:0!important;height:100%!important;min-height:142px!important}
+ .d12-mission-info{padding:10px!important}
+ .d12-mission h2{font-size:19px!important;line-height:1!important;margin:3px 0!important}
+ .d12-mission p{font-size:11px!important;line-height:1.4!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ .d12-mission-footer{display:flex;align-items:center;justify-content:space-between;gap:6px!important;flex-wrap:wrap}
+ .d12-mission-footer button{font-size:11px!important;padding:6px 9px!important}
+ .d12-filter-bar{overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap!important}
+ .d12-filter-bar button{flex-shrink:0;min-height:39px!important}
+ .v11-arena .dca-card{max-width:150px!important}
+ .v11-line-players{gap:7px!important}
+ .v11-arena .dca-detail{padding:6px!important}
+ .v11-arena .dca-detail strong{font-size:13px!important}
+ .v11-arena .dca-tag{font-size:10px!important}
+ .v11-team .v11-arena{padding:10px!important}
+ .d12-ranking{padding-bottom:15px}
+ .d12-rank-row{padding:8px 9px!important}
+ .d12-ranking .d12-rank-number{font-size:15px!important}
+ .d12-identity{display:grid;grid-template-columns:42% 58%;gap:0!important;min-height:220px!important}
+ .d12-id-art{min-height:220px!important}
+ .d12-id-body{padding:13px!important}
+ .d12-id-body h2{font-size:clamp(25px,7vw,35px)!important;line-height:1!important}
+ .d12-id-body small{font-size:10px!important}
+ #app{padding-bottom:calc(75px + env(safe-area-inset-bottom,0px))!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+.d13-searchbox{display:flex;align-items:center;gap:9px;background:#0b1834;border:1px solid #34537d;border-radius:12px;padding:0 12px;margin:8px 0 13px;color:#54d9ff}.d13-searchbox input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;padding:12px 0;font:inherit}.d13-searchbox input::placeholder{color:#a8bad8}.d13-ranking-actions{display:flex;gap:7px;overflow:auto;margin-bottom:12px}.d13-ranking-actions button{background:#14274f;border:1px solid #406093;border-radius:9px;color:#e0edff;padding:8px 10px;font:inherit;white-space:nowrap;cursor:pointer}.d13-ranking-actions button.active,.d13-ranking-actions button:focus-visible{background:#bbff48;color:#081530}.d12-mission[hidden],.d12-rank-row[hidden]{display:none!important}
